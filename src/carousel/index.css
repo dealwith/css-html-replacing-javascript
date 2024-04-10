@@ -1,0 +1,45 @@
+.carousel .slides section {
+	display: none;
+	position: absolute; /* Stack all slides */
+	width: 300px;
+}
+
+/* Display the slide when its id matches the URL fragment */
+.carousel .slides section:target {
+	display: block;
+}
+
+/* Styling for navigation links */
+.carousel a.prev, .carousel a.next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: black;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	user-select: none;
+	-webkit-user-select: none;
+}
+
+.carousel a.prev {
+	left: 0;
+}
+
+.carousel a.next {
+	right: 0;
+}
+
+/* Fallback: display the first slide if no target is specified */
+.carousel .slides section:first-of-type {
+	display: block;
+}
+
+.slide-image {
+	width: 300px;
+	height: 100px;
+	object-fit: cover;
+}
