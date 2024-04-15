@@ -4,24 +4,8 @@ const WHITE_COLOR = "#f0f0f0";
 document.addEventListener("DOMContentLoaded", () => {
 	const themeSwitch = document.getElementById("theme-switch-checkbox");
 
-	themeSwitch.addEventListener("change", () => {
-		if (themeSwitch.checked) {
-			switchToDarkMode();
-		} else {
-			switchToLightMode();
-		}
-	});
+	themeSwitch.addEventListener("change", () => toggleTheme());
 });
-
-function toggleTheme() {
-	const root = document.documentElement;
-
-	if (root.classList.contains("manual-dark")) {
-		root.classList.remove("manual-dark");
-		root.style.setProperty("--background-color", "#f0f0f0");
-		root.style.setProperty("--text-color", "#333");
-	}
-}
 
 function toggleTheme() {
 	const root = document.documentElement;
