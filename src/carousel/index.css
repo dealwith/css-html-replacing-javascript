@@ -10,7 +10,8 @@
 }
 
 /* Styling for navigation links */
-.carousel a.prev, .carousel a.next {
+.carousel a.prev,
+.carousel a.next {
 	cursor: pointer;
 	position: absolute;
 	top: 50%;
