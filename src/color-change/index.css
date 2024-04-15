@@ -1,19 +1,35 @@
-/* Initial theme based on system preferences */
+:root {
+  --background-color: #f0f0f0;
+  --text-color: #333;
+}
+
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #333;
-    color: white;
+  :root:not(.manual-dark) {
+    --background-color: #333;
+    --text-color: #f0f0f0;
   }
 }
 
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: #fff;
-    color: #333;
-  }
+.manual-dark {
+  --background-color: #333;
+  --text-color: #f0f0f0;
 }
 
-/* Toggle switch styling */
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.theme-switch-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .theme-switch {
   position: relative;
   display: inline-block;
@@ -53,15 +69,4 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
-}
-
-/* Theme change based on toggle position */
-input:checked ~ .content {
-  background-color: #333;
-  color: white;
-}
-
-input:not(:checked) ~ .content {
-  background-color: #fff;
-  color: #333;
 }
